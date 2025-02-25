@@ -17,7 +17,7 @@ class RegisterController extends Controller
         //登録ページ１
     }
 
-    public function postStep1(Request $request) 
+    public function postStep1(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -32,14 +32,14 @@ class RegisterController extends Controller
         ]);
         //userテーブルにpost
 
-        return redirect()->route('weight_input', ['user=> $user']);
+        return redirect()->route('/register/step2', ['user=> $user']);
         //次のページに進む
     }
 
     public function registerStep2(User $user)
     {
         return view('weight_input', compact('user'));
-       //登録ページ２
+        //登録ページ２
     }
 
     public function completeRegistration(Request $request, User $user)
@@ -56,10 +56,19 @@ class RegisterController extends Controller
         return redirect()->route('index');
         //管理画面に移動
 
-    
+
     }
 
+    public function index()
+    {
+        return view('index');
 
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
 
 
 }

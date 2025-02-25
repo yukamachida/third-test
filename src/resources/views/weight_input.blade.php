@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PiGLy</title>
 </head>
 <body>
     <div class="container">
         <h2>体重情報の入力</h2>
     
-        <form method="POST" action="{{ route('register.complete') }}">
+        <form method="POST" action="/weight_logs">
             @csrf
             <div class="form-group">
                 <label for="current_weight">現在の体重</label>

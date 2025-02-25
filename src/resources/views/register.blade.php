@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PiGLy</title>
 </head>
 <body>
     <div class="container">
         <h2>新規会員登録</h2>
     
         <!-- 名前、メール、パスワード入力フォーム -->
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="/register/step1">
             @csrf
             <div class="form-group">
                 <label for="name">名前</label>
@@ -41,6 +41,7 @@
     
             <button type="submit" class="btn btn-primary">次に進む</button>
         </form>
+        <a href="/login">ログインはこちら</a>
     </div>
 </body>
 </html>
