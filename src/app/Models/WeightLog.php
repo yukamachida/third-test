@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class WeightLog extends Model
 {
     use HasFactory;
+    protected $fillable =
+        [
+            'date',
+            'weight',
+            'calorise',
+            'exercise_time',
+            'exercise_content',
+        ];
 }

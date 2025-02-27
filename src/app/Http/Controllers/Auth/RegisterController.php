@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\WeightTarget;
+use App\Models\WeightLog;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -53,9 +55,9 @@ class RegisterController extends Controller
             'target_weight' => 'required|numeric|regex:/^\d{1,4}(\.\d{1})?$/',
         ]);
 
-        $user->current_weight = $request->current_weight;
-        $user->target_weight = $request->target_weight;
-        $user->save();
+       
+        $form = $request->all();
+        WeightTarget::create($form);
 
         return redirect('/weight_logs');
         //管理画面に移動
@@ -69,18 +71,15 @@ class RegisterController extends Controller
 
     public function index()
     {
-        return view('index');
+        $users = User::all();
+        return view('index', compact('users'));
 
     }
 
-    //public function store(Request $request)
+    public function store(Request $request)
     {
-        User::create(
-            $request->only([
-                'current_weight',
-                'target_weight',
-            ])
-        )
+        $form = $request->all();
+        return redirect('/weight_logs');
     }
 
     public function login()

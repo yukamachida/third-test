@@ -12,7 +12,7 @@
     <h1>PiGLy</h1>
     <h2>login</h2>
     < class="login-form_inner">
-        <form method="POST" action="/login">
+        <form method="POST" action="/weight_logs">
             @csrf
             <div class="login-form__group">
                 <label class="login-form__label" for="email">メールアドレス</label>
