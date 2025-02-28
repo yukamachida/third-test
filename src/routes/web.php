@@ -11,3 +11,4 @@ Route::get('/weight_logs', [RegisterController::class, 'index']);
 Route::post('/weight_logs', [RegisterController::class, 'store']);
 Route::get('/login', [RegisterController::class, 'login']);
 Route::get('/weight_logs/create', [RegisterController::class, 'create']);
+//Route::post('/weight_logs/create', [RegisterController::class, store)設定してコントローラーに追加
